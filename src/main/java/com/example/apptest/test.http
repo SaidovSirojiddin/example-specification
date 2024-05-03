@@ -1,0 +1,91 @@
+GET http://localhost:8083/api/employees/view
+
+
+###
+
+POST http://localhost:8083/api/employees/list
+Content-Type: application/json
+
+{
+  "sorting": [
+    {
+      "field": "firstNameLat",
+      "orderIndex": 1.00,
+      "direction": "DESC"
+    },
+    {
+      "field": "lastNameLat",
+      "orderIndex": 2.00,
+      "direction": "ASC"
+    }
+  ],
+  "viewFilter": {
+    "filterOperator": "OR",
+    "search": "",
+    "searchingColumns": [
+      {
+        "columnType": "TEXT",
+        "columnName": "firstNameLat"
+      }
+    ],
+    "filterFields": [
+      {
+        "compareOperatorType": "EQ",
+        "orderIndex": 0.00,
+        "field": "district",
+        "fieldType": "DROPDOWN",
+        "value": {
+          "optionsSelected": [
+            "b28da12b-7bf3-4887-aa38-2c67fca894fa"
+          ]
+        }
+      },
+      {
+        "compareOperatorType": "EQ",
+        "orderIndex": 0.00,
+        "field": "position",
+        "fieldType": "DROPDOWN",
+        "value": {
+          "optionsSelected": [
+            "62232858-3830-4877-a93e-b5bdd30536a6"
+          ]
+        }
+      },
+      {
+        "compareOperatorType": "NOT",
+        "orderIndex": 0.00,
+        "field": "department",
+        "fieldType": "DROPDOWN",
+        "value": {
+          "optionsSelected": [
+            "bc50c1a9-a218-4acb-97af-9a6ca10bcb1b"
+          ]
+        }
+      },
+      {
+        "compareOperatorType": "EQ",
+        "orderIndex": 0.00,
+        "field": "district",
+        "fieldType": "DROPDOWN",
+        "value": {
+          "optionsSelected": [
+            "bc50c1a9-a218-4acb-97af-9a6ca10bcb1b"
+          ]
+        }
+      },
+      {
+        "compareOperatorType": "EQ",
+        "orderIndex": 0.00,
+        "field": "region",
+        "fieldType": "DROPDOWN",
+        "value": {
+          "optionsSelected": [
+            "bc50c1a9-a218-4acb-97af-9a6ca10bcb1b"
+          ]
+        }
+      }
+    ]
+  },
+  "page": 0,
+  "size": 10
+}
